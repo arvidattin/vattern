@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1A202C; /* Deep Indigo / Black */
+  --color-accent: #7A8068; /* Olive Green / Desaturated */
+  --color-surface-soft: #EFECE3; /* Linen */
+  --color-background: #F4F2EC; /* Oyster White */
+  --color-border: #D1CDBC;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  overflow-x: hidden;
+  /* An organic noise SVG texture layered on top */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+.font-serif {
+  font-family: var(--font-cormorant), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+.font-sans {
+  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Elegant horizontal rules and borders */
+.editorial-border {
+  border: 1px solid var(--color-border);
+}
+.editorial-border-b {
+  border-bottom: 1px solid var(--color-border);
+}
+.editorial-border-t {
+  border-top: 1px solid var(--color-border);
+}
+
+/* Hover effects */
+.hover-underline {
+  position: relative;
+  text-decoration: none;
+}
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-primary);
+  transform-origin: bottom right;
+  transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+.hover-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Subtle image reveal effect */
+.reveal-image {
+  clip-path: inset(0 0 100% 0);
+  animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+@keyframes reveal {
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}

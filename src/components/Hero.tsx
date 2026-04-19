@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import HeroFrameSequence from "./HeroFrameSequence";
 
 export default function Hero() {
   const links = [
@@ -23,7 +24,7 @@ export default function Hero() {
             <h2 className="text-[#7A8068] font-sans tracking-[0.2em] text-xs uppercase font-bold bg-[#EFECE3] px-3 py-1 inline-block rounded-md w-fit">
               Din tandläkare i Motala
             </h2>
-            <h1 className="font-sans font-bold text-6xl md:text-[5.5rem] leading-[1.05] tracking-tight text-[#1A202C]">
+            <h1 className="font-sans font-bold text-5xl sm:text-6xl md:text-[5.5rem] leading-[1.05] tracking-tight text-[#1A202C]">
               Ett leende <br />
               <span className="text-[#7A8068]">förändrar</span> allt.
             </h1>
@@ -57,15 +58,7 @@ export default function Hero() {
           
           <div className="absolute inset-0">
             <div className="relative w-full h-full overflow-hidden bg-[#EFECE3]">
-              <Image 
-                src="/hero_dental_clinic.png"
-                alt="Modern dentistry clinic interior"
-                fill
-                style={{ objectFit: 'cover', objectPosition: 'center' }}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
-                className="mix-blend-multiply contrast-125 saturate-50"
-              />
+              <HeroFrameSequence />
             </div>
           </div>
 

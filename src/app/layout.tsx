@@ -3,6 +3,7 @@ import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SmoothScrolling from "@/components/SmoothScrolling";
 
 const cormorant = Cormorant_Garamond({ 
   subsets: ["latin"],
@@ -29,11 +30,13 @@ export default function RootLayout({
   return (
     <html lang="sv" className="scroll-smooth">
       <body className={`${dmSans.variable} ${cormorant.variable} font-sans min-h-screen flex flex-col`}>
-        <Navbar />
-        <main className="flex-grow pt-0 md:pt-2">
-          {children}
-        </main>
-        <Footer />
+        <SmoothScrolling>
+          <Navbar />
+          <main className="flex-grow pt-0 md:pt-2">
+            {children}
+          </main>
+          <Footer />
+        </SmoothScrolling>
       </body>
     </html>
   );
